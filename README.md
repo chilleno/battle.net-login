@@ -13,9 +13,9 @@ npm run dev
 Open [http://localhost:3000/api/oauth/blizzard/login](http://localhost:3000/api/oauth/blizzard/login) with your browser to see the result.
 
 
-## 1. The basics
+# 1. The basics
 
-# 1.1. Gaining access to the API
+## 1.1. Gaining access to the API
 
 To gain access to the API visit [API Access](https://develop.battle.net/access) and follow the instructions.
 
@@ -23,11 +23,11 @@ When creating your first client credentials use http://127.0.0.1:3000/api/oauth/
 
 👉 It can take up to 15 minutes for your new credentials start working.
 
-# 1.2. Testing the API
+## 1.2. Testing the API
 
 If you want to play around the API and see what data is available, you can use your new credentials on the official API documentation 663.
 
-## 2. .env values
+# 2. .env values
 
 CLIENT_ID= this value is given by blizzard in the step 1
 CLIENT_SECRET= this value is given by blizzard in the step 1

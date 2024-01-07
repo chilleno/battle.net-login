@@ -5,32 +5,34 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+npm install
+npm run build
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/api/oauth/blizzard/login](http://localhost:3000/api/oauth/blizzard/login) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 1. The basics
 
-## Learn More
+# 1.1. Gaining access to the API
 
-To learn more about Next.js, take a look at the following resources:
+To gain access to the API visit [API Access](https://develop.battle.net/access) and follow the instructions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+When creating your first client credentials use http://127.0.0.1:3000/api/oauth/blizzard/callback and check the option I do not have a service URL for this client if you still don’t know exactly how you are gonna use it (you can edit later).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+👉 It can take up to 15 minutes for your new credentials start working.
 
-## Deploy on Vercel
+# 1.2. Testing the API
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you want to play around the API and see what data is available, you can use your new credentials on the official API documentation 663.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 2. .env values
+
+CLIENT_ID= this value is given by blizzard in the step 1
+CLIENT_SECRET= this value is given by blizzard in the step 1
+AUTHORIZE_ENDPOINT='https://us.battle.net/oauth/authorize' //should be the same until blizzard change it
+TOKEN_ENDPOINT='https://us.battle.net/oauth/token'  //should be the same until blizzard change it
+REDIRECT_URL='http://127.0.0.1:3000/api/oauth/blizzard/callback'  //should be the same until you publish your project
+SCOPES='wow.profile' // modify as needed
+STATE= This value requires a random key I recomend use letters and numbers only
